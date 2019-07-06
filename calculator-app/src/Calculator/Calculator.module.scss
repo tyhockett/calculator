@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.content {
+    background-color: #000;
+    color: #fff;
+    box-sizing: border-box;
+    border-radius: 8px;
+    max-width: 349px;
+    padding: 10px 0;
+}
+
+.readout {
+    height: 170px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 9px;
+    .output {
+        text-align: right;
+        width: 100%;
+        font-size: 4.5em;
+        font-weight: 300;
+        overflow: hidden;
+    }
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.buttons > div {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background-color: rgb(51, 51, 51);
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    user-select: none;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.buttons > .zero {
+    width: 148px;
+}
+
+.buttons > .grayButton {
+    background-color: rgb(165, 165, 165);
+}
+.buttons > .orangeButton {
+    background-color: rgb(240, 154, 55);
+}
