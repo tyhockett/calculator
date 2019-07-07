@@ -52,6 +52,9 @@
 
 .buttons > .zero {
     width: 148px;
+    justify-content: flex-start;
+    padding-left: 28px;
+    box-sizing: border-box;
 }
 
 .buttons > .grayButton {

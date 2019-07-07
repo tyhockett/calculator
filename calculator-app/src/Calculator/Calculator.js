@@ -14,11 +14,15 @@ class Calculator extends PureComponent {
     }
 
     componentDidMount() {
-        document.addEventListener("keypress", this.handleKeyPress);
+        window.Calculator = this;
+        window.addEventListener("keypress", this.handleKeyPress);
+        window.addEventListener("keyup", this.handleKeyUp);
     }
 
     componentWillUnmount() {
-        document.removeEventListener("keypress", this.handleKeyPress);
+        window.Calculator = null;
+        window.removeEventListener("keypress", this.handleKeyPress);
+        window.removeEventListener("keyup", this.handleKeyUp);
     }
 
     appendValue(value) {
@@ -37,7 +41,7 @@ class Calculator extends PureComponent {
     clearValue() {
         this.setState({
             output: "0",
-            previousValue: 0,
+            previousValue: 0
         });
     }
 
@@ -110,6 +114,19 @@ class Calculator extends PureComponent {
         });
     }
 
+    backSpace() {
+        if (this.state.output.length > 1) {
+            this.setState({
+                output: this.state.output.substr(
+                    0,
+                    this.state.output.length - 1
+                )
+            });
+        } else {
+            this.clearValue();
+        }
+    }
+
     handleKeyPress(event) {
         switch (event.keyCode) {
             default:
@@ -174,6 +191,22 @@ class Calculator extends PureComponent {
             case 13:
             case 61:
                 this.solve();
+                break;
+        }
+    }
+
+    handleKeyUp(event) {
+        switch (event.keyCode) {
+            default:
+                break;
+
+            case 46:
+            case 12:
+                window.Calculator.clearValue();
+                break;
+
+            case 8:
+                window.Calculator.backSpace();
                 break;
         }
     }
