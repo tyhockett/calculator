@@ -188,6 +188,10 @@ class Calculator extends PureComponent {
                 this.setOperator("/");
                 break;
 
+            case 46:
+                this.appendValue(".");
+                break;
+
             case 13:
             case 61:
                 this.solve();
