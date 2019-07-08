@@ -11,6 +11,7 @@
     box-sizing: border-box;
     border-radius: 8px;
     max-width: 349px;
+    width: 349px;
     padding: 10px 0;
 }
 
@@ -47,11 +48,11 @@
     font-size: 2em;
     user-select: none;
     cursor: pointer;
-    margin: 5px 0;
+    margin: 5px 8px;
 }
 
 .buttons > .zero {
-    width: 148px;
+    width: 156px;
     justify-content: flex-start;
     padding-left: 28px;
     box-sizing: border-box;
